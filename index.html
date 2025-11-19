@@ -1,18 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cyberpunk Fireworks</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="canvas-wrapper">
-        <canvas id="fireworksCanvas" width="1280" height="720"></canvas>
-      </div>
-      <button id="fireworksBtn">Launch Fireworks</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Simulator - EngFest 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="hud">
+        <div class="hud-panel">
+            <h2>Flight Controls</h2>
+            <div class="hud-item">
+                <span class="label">Speed:</span>
+                <span id="speed">100</span>
+                <span class="unit">km/h</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Altitude:</span>
+                <span id="altitude">500</span>
+                <span class="unit">m</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Pitch:</span>
+                <span id="pitch">0</span>
+                <span class="unit">°</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Roll:</span>
+                <span id="roll">0</span>
+                <span class="unit">°</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Yaw:</span>
+                <span id="yaw">0</span>
+                <span class="unit">°</span>
+            </div>
+            <div class="hud-item score">
+                <span class="label">Score:</span>
+                <span id="score">0</span>
+                <span class="unit">pts</span>
+            </div>
+        </div>
+        
+        <div class="controls-panel">
+            <h3>Controls Guide</h3>
+            <ul>
+                <li><strong>↑</strong> Pitch Down (nose down)</li>
+                <li><strong>↓</strong> Pitch Up (nose up)</li>
+                <li><strong>←</strong> Roll Left</li>
+                <li><strong>→</strong> Roll Right</li>
+                <li><strong>E</strong> Yaw Left</li>
+                <li><strong>Q</strong> Yaw Right</li>
+                <li><strong>Shift</strong> Increase Speed</li>
+                <li><strong>Ctrl</strong> Decrease Speed</li>
+            </ul>
+            <div class="objective">
+                <h4>⚠️ Objective:</h4>
+                <p>Avoid the yellow cone balloons! Hitting any balloon will crash your plane. See how long you can survive!</p>
+            </div>
+        </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+    
+    <canvas id="gameCanvas"></canvas>
+    
+    <div id="loading">
+        <h1>Loading Flight Simulator...</h1>
+        <div class="loader"></div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
 </html>
